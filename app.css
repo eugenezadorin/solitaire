@@ -1,8 +1,19 @@
 html, body {
-    font-family: monospace;
+    font-family: Consolas, monospace;
     font-size: 16px;
     padding: 0;
     margin: 0;
+}
+
+a, a:hover, a:focus, a:visited {
+    color: #0c7ef1;
+    border-bottom: 1px solid #0c7ef1;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom-color: transparent;
 }
 
 #app {
@@ -31,6 +42,7 @@ footer {
     box-sizing: border-box;
     font-size: 10px;
     line-height: 1.6;
+    text-align: center;
 }
 
 .node {
@@ -41,12 +53,14 @@ footer {
     border-radius: 50%;
     box-sizing: border-box;
     cursor: pointer;
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.67);
 }
 
 .is-empty {
-    background: #000 !important;
-    border: 12px solid #cae1f3;
+    background: linear-gradient(to right, #3a3a3a 0%, #000000 35%, #4a4a4a 100%) !important;
+    border: 10px solid #cae1f3;
     cursor: default;
+    box-shadow: none;
 }
 
 .is-active {
@@ -68,12 +82,5 @@ footer {
 }
 
 .new-game {
-    color: #0c7ef1;
-    border-bottom: 1px solid #0c7ef1;
     margin-left: 15px;
-    cursor: pointer;
-}
-
-.new-game:hover {
-    border-bottom-color: transparent;
 }

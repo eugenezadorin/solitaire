@@ -117,7 +117,10 @@
             });
 
             let statusText = '';
-            let newGameBtn = false;
+            let newGameBtn = document.createElement('a');
+            newGameBtn.setAttribute('href', '');
+            newGameBtn.classList.add('new-game');
+            newGameBtn.innerHTML = 'New game';
 
             if (this.isOver()) {
                 if (this.isWin()) {
@@ -125,19 +128,14 @@
                 } else {
                     statusText = 'Game over :(';
                 }
-                newGameBtn = document.createElement('span');
-                newGameBtn.classList.add('new-game');
-                newGameBtn.innerHTML = 'New game';
-                newGameBtn.addEventListener('click', e => window.location.reload());
+
             } else {
                 statusText = 'Next move';
             }
             let statusBar = document.createElement('div');
             statusBar.classList.add('status');
             statusBar.innerHTML = statusText;
-            if (newGameBtn) {
-                statusBar.append(newGameBtn);
-            }
+            statusBar.append(newGameBtn);
             this.el.append(statusBar);
 
             let movesBar = document.createElement('div');
