@@ -1,0 +1,70 @@
+html, body {
+    font-family: monospace;
+    font-size: 16px;
+    min-width: 640px;
+    padding: 0;
+    margin: 0;
+}
+
+#app {
+    margin: 0 auto 80px auto;
+    width: 520px;
+    height: 520px;
+    background: #cae1f3;
+    position: relative;
+}
+
+#rules {
+    margin: 20px auto;
+    width: 520px;
+    background: #cae1f3;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.node {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    background: #000;
+    border-radius: 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.is-empty {
+    background: #000 !important;
+    border: 12px solid #cae1f3;
+    cursor: default;
+}
+
+.is-active {
+    border: 2px solid red;
+}
+
+.status {
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.moves {
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.new-game {
+    color: #0c7ef1;
+    border-bottom: 1px solid #0c7ef1;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.new-game:hover {
+    border-bottom-color: transparent;
+}
