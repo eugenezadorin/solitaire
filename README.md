@@ -1,6 +1,6 @@
 # Cолитер
 
-https://ru.wikipedia.org/wiki/Солитер_(игра)
+Demo — [https://eugenezadorin.github.io/solitaire/](https://eugenezadorin.github.io/solitaire/)
 
 Правила просты:
 
@@ -9,3 +9,5 @@ https://ru.wikipedia.org/wiki/Солитер_(игра)
 2. Фишка, через которую прыгнули, убирается.
 
 3. Играющий выигрывает, если в конце игры остался лишь одна фишка.
+
+https://ru.wikipedia.org/wiki/Солитер_(игра)
