@@ -1,6 +1,7 @@
 import { Node } from './Node.js';
 import { Grid } from './Grid.js';
 import { Game } from './Game.js';
+import { Popup } from './Popup.js';
 
 (function(){
 
@@ -41,5 +42,27 @@ import { Game } from './Game.js';
     const el = document.getElementById('app');
     const game = new Game(el, grid);
     game.render();
+
+    const popup = new Popup();
+    if (localStorage.getItem('rules_read') !== 'true') {
+        popup.open();
+    }
+
+    document.querySelector('.rules-got-it').addEventListener('click', e => {
+        e.preventDefault();
+        popup.close();
+        localStorage.setItem('rules_read', true);
+    });
+
+    document.querySelector('.show-rules').addEventListener('click', e => {
+        e.preventDefault();
+        popup.open();
+    });
+
+    document.querySelector('.popup-overlay').addEventListener('click', e => {
+        if (e.target.classList.contains('popup-overlay')) {
+            popup.close();
+        }
+    });
 
 })();

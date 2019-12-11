@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Solitaire</title>
+    <title>Cолитер</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
-    <header>
-        Cолитер. Правила просты: <br><br>
-        1. Цветная фишка прыгает через другую, если за ней есть свободная лунка. <br>
-        2. Фишка, через которую прыгнули, убирается. <br>
-        3. Играющий выигрывает, если в конце игры остался лишь одна фишка.
-    </header>
-    <main id="app"></main>
+    <div class="content">
+        <header>
+            <div class="col is-relative">
+                <h1>Солитер</h1>
+                <a href="#" class="show-rules">Правила</a>
+            </div>
+        </header>
+        <main id="app"></main>
+    </div>
     <footer>
-        Tested at latest Chrome and Firefox. <nobr>Sources — <a href="https://github.com/eugenezadorin/solitaire" target="_blank">https://github.com/eugenezadorin/solitaire</a></nobr>
+        <div class="col">
+            <a href="https://github.com/eugenezadorin/solitaire" target="_blank">https://github.com/eugenezadorin/solitaire</a>
+        </div>
     </footer>
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <p>Правила просты:<br></p>
+            <p>1. Цветная фишка прыгает через другую, если за ней есть свободная лунка. </p>
+            <p>2. Фишка, через которую прыгнули, убирается. </p>
+            <p>3. Играющий выигрывает, если в конце игры остался лишь одна фишка.</p>
+            <p><a href="#" class="rules-got-it">Ясно!</a></p>
+        </div>
+    </div>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>

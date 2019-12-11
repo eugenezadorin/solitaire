@@ -5,6 +5,7 @@ export class Game {
         this.el = el;
         this.grid = grid;
         this.movesCount = 0;
+        this.el.style.height = this.el.offsetWidth + 40 + 'px';
     }
 
     render() {
@@ -14,7 +15,6 @@ export class Game {
         this.grid.nodes.forEach( this.renderNode.bind(this) );
 
         this.renderStatusBar();
-        this.renderMovesBar();
     }
 
     renderNode(node, idx) {
@@ -73,34 +73,38 @@ export class Game {
     }
 
     renderStatusBar() {
-        let statusText = '';
-        let newGameBtn = document.createElement('a');
-        newGameBtn.setAttribute('href', '');
-        newGameBtn.classList.add('new-game');
-        newGameBtn.innerHTML = 'New game';
+        let newGameBtn = () => {
+            let n = document.createElement('a');
+            n.setAttribute('href', '');
+            n.classList.add('new-game');
+            n.innerHTML = 'Новая игра';
+            return n;
+        };
 
-        if (this.isOver()) {
-            if (this.isWin()) {
-                statusText = 'You win!';
-            } else {
-                statusText = 'Game over :(';
+        let status = () => {
+            let statusText = 'Ваш ход';
+            if (this.isOver()) {
+                statusText = this.isWin() ? 'Победа!' : 'Упс :(';
             }
+            let n = document.createElement('div');
+            n.innerHTML = statusText;
+            n.classList.add('status');
+            return n;
+        };
 
-        } else {
-            statusText = 'Next move';
-        }
+        let moves = () => {
+            let n = document.createElement('div');
+            n.classList.add('moves');
+            n.innerHTML = 'Ходы: ' + this.movesCount;
+            return n;
+        };
+
         let statusBar = document.createElement('div');
-        statusBar.classList.add('status');
-        statusBar.innerHTML = statusText;
-        statusBar.append(newGameBtn);
+        statusBar.classList.add('status-bar');
+        statusBar.append(status());
+        statusBar.append(newGameBtn());
+        statusBar.append(moves());
         this.el.append(statusBar);
-    }
-
-    renderMovesBar() {
-        let movesBar = document.createElement('div');
-        movesBar.classList.add('moves');
-        movesBar.innerHTML = 'Moves: ' + this.movesCount;
-        this.el.append(movesBar);
     }
 
     isOver() {
