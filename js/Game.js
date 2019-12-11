@@ -29,12 +29,14 @@ export class Game {
         domNode.style.backgroundColor = node.color;
         domNode.style.top = this.el.offsetHeight - Node.HEIGHT + node.y + 'px';
         domNode.style.left = node.x + 'px';
+        domNode.style.width = Node.WIDTH + 'px';
+        domNode.style.height = Node.HEIGHT + 'px';
         this.el.append(domNode);
         domNode.addEventListener('click', event => {
             if (node.isEmpty) {
                 this.moveActiveNodeTo(idx);
             } else {
-                this.activateNode(idx);
+                this.toggleNode(idx);
             }
             this.render();
         });
@@ -59,10 +61,15 @@ export class Game {
         });
     }
 
-    activateNode(index) {
-        this.grid.nodes.forEach(node => node.isActive = false);
-        this.grid.nodes[index].isActive = true;
-        this.grid.activeNode = index;
+    toggleNode(index) {
+        if (this.grid.nodes[index].isActive) {
+            this.grid.nodes.forEach(node => node.isActive = false);
+            this.grid.activeNode = false;
+        } else {
+            this.grid.nodes.forEach(node => node.isActive = false);
+            this.grid.nodes[index].isActive = true;
+            this.grid.activeNode = index;
+        }
     }
 
     renderStatusBar() {

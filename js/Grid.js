@@ -1,15 +1,33 @@
+import { Node } from './Node.js';
+
 export class Grid {
     constructor() {
         this.nodes = [];
         this.activeNode = false;
     }
 
+    static get WIDTH() {
+        let workspaceWidth = document.documentElement.clientWidth;
+        if (workspaceWidth > 520) {
+            workspaceWidth = 520;
+        }
+        return workspaceWidth;
+    }
+
     static get EDGE() {
-        return 100;
+        let workspaceWidth = document.documentElement.clientWidth;
+        if (workspaceWidth > 520) {
+            return 100;
+        }
+        return parseInt(workspaceWidth / 5);
     }
 
     static get INIT_POS() {
-        return [36, -36];
+        const maxWidth = Grid.WIDTH;
+        const top = -36;
+        const left = parseInt(((maxWidth - (Grid.EDGE * 4)) / 2) - (Node.WIDTH / 2));
+
+        return [left, top];
     }
 
     static getVertex(node1, node2) {

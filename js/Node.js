@@ -11,10 +11,18 @@ export class Node {
     }
 
     static get HEIGHT() {
-        return 48;
+        let workspaceWidth = document.documentElement.clientWidth;
+        if (workspaceWidth > 520) {
+            return 48;
+        }
+        return 32;
     }
 
     static get WIDTH() {
-        return 48;
+        let workspaceWidth = document.documentElement.clientWidth;
+        if (workspaceWidth > 520) {
+            return 48;
+        }
+        return 32;
     }
 }

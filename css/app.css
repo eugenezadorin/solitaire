@@ -18,7 +18,7 @@ a:hover {
 
 #app {
     margin: 0 auto;
-    width: 520px;
+    max-width: 520px;
     height: 520px;
     background: #cae1f3;
     position: relative;
@@ -26,7 +26,7 @@ a:hover {
 
 header {
     margin: 20px auto;
-    width: 520px;
+    max-width: 520px;
     background: #cae1f3;
     padding: 15px;
     box-sizing: border-box;
@@ -36,7 +36,7 @@ header {
 
 footer {
     margin: 20px auto;
-    width: 520px;
+    max-width: 520px;
     background: #cae1f3;
     padding: 15px;
     box-sizing: border-box;
@@ -46,14 +46,13 @@ footer {
 }
 
 .node {
-    width: 48px;
-    height: 48px;
     position: absolute;
     background: #000;
     border-radius: 50%;
     box-sizing: border-box;
     cursor: pointer;
     box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.67);
+    transition: transform .5s;
 }
 
 .is-empty {
@@ -64,7 +63,8 @@ footer {
 }
 
 .is-active {
-    border: 2px solid red;
+    background: linear-gradient(323deg, rgba(209,209,209,0.25) 0%, rgba(255,255,255,0.35) 100%);
+    transform: scale(1.2);
 }
 
 .status {
