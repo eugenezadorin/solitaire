@@ -66,7 +66,7 @@ import { Popup } from './Popup.js';
     });
 
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./js/worker.js')
+        navigator.serviceWorker.register('./worker.js')
             .then((reg) => {
                 // success
             }).catch((error) => {
