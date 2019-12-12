@@ -1,22 +1,22 @@
 const CACHE = 'cache-and-update-v1';
 const CACHED_FILES = [
-    '/js/app.js',
-    '/js/worker.js',
-    '/js/Color.js',
-    '/js/Game.js',
-    '/js/Grid.js',
-    '/js/Node.js',
-    '/js/Popup.js',
-    '/css/app.css',
-    '/img/android-chrome-192x192.png',
-    '/img/android-chrome-512x512.png',
-    '/img/apple-touch-icon.png',
-    '/img/favicon.ico',
-    '/img/favicon-16x16.png',
-    '/img/favicon-32x32.png',
-    '/img/mstile-150x150.png',
-    '/img/safari-pinned-tab.svg',
-    '/index.html'
+    'js/app.js',
+    'js/worker.js',
+    'js/Color.js',
+    'js/Game.js',
+    'js/Grid.js',
+    'js/Node.js',
+    'js/Popup.js',
+    'css/app.css',
+    'img/android-chrome-192x192.png',
+    'img/android-chrome-512x512.png',
+    'img/apple-touch-icon.png',
+    'img/favicon.ico',
+    'img/favicon-16x16.png',
+    'img/favicon-32x32.png',
+    'img/mstile-150x150.png',
+    'img/safari-pinned-tab.svg',
+    'index.html'
 ];
 
 self.addEventListener('install', (event) => {
