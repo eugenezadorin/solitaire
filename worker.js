@@ -1,7 +1,6 @@
 const CACHE = 'cache-and-update-v1';
 const CACHED_FILES = [
     'js/app.js',
-    'js/worker.js',
     'js/Color.js',
     'js/Game.js',
     'js/Grid.js',
@@ -16,7 +15,8 @@ const CACHED_FILES = [
     'img/favicon-32x32.png',
     'img/mstile-150x150.png',
     'img/safari-pinned-tab.svg',
-    'index.html'
+    'index.html',
+    'worker.js',
 ];
 
 self.addEventListener('install', (event) => {
