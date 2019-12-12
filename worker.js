@@ -25,12 +25,7 @@ self.addEventListener('install', (event) => {
     );
 });
 
-self.addEventListener('activate', (event) => {
-    console.log('activated');
-});
-
 self.addEventListener('fetch', (event) => {
-    console.log('test1');
     event.respondWith(fromCache(event.request));
     event.waitUntil(update(event.request));
 });
